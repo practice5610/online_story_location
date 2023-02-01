@@ -1,0 +1,28 @@
+.flex {
+  display: flex;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.grow {
+  max-height: 100vh;
+  transition: max-height;
+  transition-duration: 1500ms;
+}
+
+.half {
+  width: 50%;
+}
+
+.background {
+  background-image: url(./main_background.png);
+  background-size: cover;
+  height: 100vh;
+}

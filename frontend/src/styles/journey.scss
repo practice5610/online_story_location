@@ -1,0 +1,136 @@
+.journey {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 75px;
+  font-family: $fonts;
+
+  &>h1 {
+    font-size: 36px;
+    color: white;
+    text-shadow: 0px 0px 6px black;
+  }
+
+  &>h2 {
+    margin: 5px 0 5px 0;
+    font-size: 24px;
+    color: white;
+    text-shadow: 0px 0px 6px black;
+  }
+
+  &>.share {
+    margin: 10px;
+  }
+}
+
+.svg {
+  background: #a6d0ef;
+  border-style: solid;
+  border-color: grey;
+}
+
+.share {
+  display: flex;
+  justify-content: center;
+
+  & input {
+    width: 500px;
+    padding-left: 10px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  & button {
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.8rem;
+    border-radius: 8px;
+
+    &:hover {
+      filter: brightness(85%)
+    }
+  }
+}
+
+.journey-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -2;
+  background-color: white;
+}
+
+.journey::after {
+  content: "";
+  background: url(./journey-background.jpg);
+  background-size: cover;
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+#tooltip {
+  position: fixed;
+  visibility: visible;
+  width: 200px;
+  height: auto;
+  transition: 0.5s all ease-out;
+  transform: scaleY(1);
+  transform-origin: top;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  overflow: hidden;
+
+  &>* {
+    margin-bottom: 10px;
+  }
+
+  &>*:last-child {
+    margin-bottom: 0;
+  }
+
+  & img {
+    width: 100%;
+  }
+}
+
+#tooltip.hidden {
+  visibility: hidden;
+  transform: scaleY(0);
+  border-radius: 50%;
+  transform-origin: top;
+  transition: visibility 0s 0.3s, all 0.3s;
+}
+
+.line {
+  fill: none;
+  stroke: blue;
+  stroke-width: 1;
+}
+
+.map-feature {
+  fill: beige;
+  stroke: grey;
+}
+
+.arrow path {
+  fill: none;
+  stroke: black;
+}
+
+#arrowhead {
+  stroke: none;
+  fill: black;
+}
